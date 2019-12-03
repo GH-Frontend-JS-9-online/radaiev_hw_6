@@ -151,5 +151,5 @@ function matchLetters(form) {
 	alert(`Совпадение слов: ${result}%`);
 }
 
-// text += "\nСтрока в верхнем регистре - " + string.toUpperCase();
-// text += "\nСтрока в нижнем регистре - " + string.toLowerCase();
+
+
