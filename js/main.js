@@ -73,19 +73,20 @@ function getMinValue() {
 
 
 //Create function which will return function with callback in arguments
-document.write('<br>');
-document.write('<br>');
-sumToNambers(numberSquared, 3, 4);
 
-function sumToNambers(callback, value1=0, value2 = 0) {
-	let sum = value1 + value2;
-	callback(sum);
+
+function question(question, yes, no) {
+	(confirm(question)) ? yes() : no(); 
 }
 
-function numberSquared(sum) {
-	let squared = sum * 2;
-	document.write(`Выполнение работы функции, которая вызванная колбэком: ${squared}`);
+let yes = function() {
+	alert('Да сработал))')
 }
+
+let no = function() {
+	alert('Все таки сработал')
+}
+
 
 
 // Create a function that will replace all number dividing three with ‘foo’, 
@@ -143,13 +144,38 @@ function matchLetters(form) {
 
 	}
 
-	result = result/(str1.length + str2.length)*100
+	result = result/(str1.length + str2.length)*100;
 	if(str1 == str2) {
 		result = 100;
 	}
 
-	alert(`Совпадение слов: ${result}%`);
+	alert(`Совпадение: ${result}%`);
 }
 
 
+function matchLetterss(form) {
+	let str1, str2, result, sum;
 
+	result = 0;
+	str1 = form.string11.value.toLowerCase().trim();
+	str2 = form.string22.value.toLowerCase().trim();
+
+	for(let i = 0; i < str1.length || i < str2.length; i++) {
+
+		
+			if(str1.charAt(i) == str2.charAt(i)) {
+				++result;
+			}
+	
+	}
+
+	if(str1.length > str2.length) {
+		result = result/str1.length * 100;
+	}else if (str1.length <= str2.length){
+		result = result/str2.length * 100;
+	}
+
+
+
+	alert(`Совпадение: ${result}%`);
+}
